@@ -14,6 +14,8 @@ A gateway consists of two ESP devices interconnected over a serial link:
 The reason of using two ESP modules are wireless channel limitations in using both ESP-Now and WiFi protocols on the same ESP board. 
 Ref. https://docs.espressif.com/projects/esp-faq/en/latest/application-solution/esp-Now.html
 
+A basic architecture diagram is available in /diagrams/basic_architecture.png.
+
 The code in /node works for any of the three types of nodes (sensor, repeter or gateway) on both ESP8266 or ESP32 boards - the configuration is done through conditional compiling directives in node_config.h.
 The code has been tested on the following boards:
 
@@ -42,3 +44,5 @@ Files:
 - /wifi_transmitter/include/secrets.h - configuration (WiFi credentials, certificates)
 - /wifi_transmitter/main.cpp - main program
 - /wifi_transmitter/platformio.ini - PlatformIO initialization
+
+Testing has been done using various ESP modules. As an example, you can use an ESP8266 ESP-01 + DHT11 as a sensor, ESP8266 ESP-12E as a repeater, one ESP32 DevKit v1 as a gateway and one ESP32 DevKit v1 as a WiFi transmitter.
